@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package service1;
+
+option go_package = "../practice10/internal/service1/proto";
+
+// Определение сервиса
+service TimeService {
+  rpc GetCurrentTime (TimeRequest) returns (TimeResponse);
+}
+
+// Определение сообщений
+message TimeRequest {}
+
+message TimeResponse {
+  string current_time = 1;
+}

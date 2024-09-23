@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package service2;
+
+option go_package = "../practice10/internal/service2/proto";
+
+// Определение сервиса
+service GreetService {
+  rpc Greet (GreetRequest) returns (GreetResponse);
+}
+
+// Определение сообщений
+message GreetRequest {
+  string name = 1;
+}
+
+message GreetResponse {
+  string message = 1;
+}

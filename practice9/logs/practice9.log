@@ -1,0 +1,24 @@
+2024/09/22 15:42:21 Logging setup complete.
+2024/09/22 15:42:21 Connected to MongoDB: mongodb://mongo:27017
+2024/09/22 15:42:21 Server started on port 8080
+2024/09/22 16:33:12 Logging setup complete.
+2024/09/22 16:33:12 Connected to MongoDB: mongodb://mongo:27017
+2024/09/22 16:33:12 Server started on port 8080
+2024/09/22 18:24:21 File uploaded successfully: 66f060d5e329bbaddd08e9a8
+2024/09/22 18:27:57 Successfully retrieved all files.
+2024/09/22 18:29:58 Successfully deleted file with id 66ef70f6303bde80051716d3.
+2024/09/22 18:30:14 Successfully retrieved all files.
+2024/09/22 18:30:29 Successfully deleted file with id 66f031a29def9a9a478aaa89.
+2024/09/22 18:32:14 File uploaded successfully: 66f062aee329bbaddd08e9aa
+2024/09/22 18:32:34 Successfully retrieved all files.
+2024/09/22 18:32:59 File uploaded successfully: 66f062dbe329bbaddd08e9ac
+2024/09/22 18:33:04 Successfully retrieved all files.
+2024/09/22 18:34:00 Successfully deleted file with id 66f062aee329bbaddd08e9aa.
+2024/09/22 18:34:05 Successfully deleted file with id 66f062dbe329bbaddd08e9ac.
+2024/09/22 18:34:10 Successfully retrieved all files.
+2024/09/22 18:34:18 File uploaded successfully: 66f0632ae329bbaddd08e9ae
+2024/09/22 18:35:16 File with id 66f0632ae329bbaddd08e9ae updated successfully. New file id: 66f06364e329bbaddd08e9b0
+2024/09/22 18:36:13 Successfully retrieved all files.
+2024/09/22 18:36:41 Successfully deleted file with id 66f060d5e329bbaddd08e9a8.
+2024/09/22 18:37:21 Successfully retrieved all files.
+2024/09/22 18:38:30 Successfully retrieved file info with id 66f06364e329bbaddd08e9b0.

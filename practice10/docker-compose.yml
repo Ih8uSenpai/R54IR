@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  practice10:
+    build: .
+    environment:
+      - SERVICE1_PORT=${SERVICE1_PORT}
+      - SERVICE2_PORT=${SERVICE2_PORT}
+      - API_GATEWAY_PORT=${API_GATEWAY_PORT}
+      - LOG_FILE_PATH=${LOG_FILE_PATH}
+    volumes:
+      - ./logs:/logs
+    ports:
+      - "${API_GATEWAY_PORT}:${API_GATEWAY_PORT}"  # API Gateway
+      - "${SERVICE1_PORT}:${SERVICE1_PORT}"        # Service1
+      - "${SERVICE2_PORT}:${SERVICE2_PORT}"        # Service2
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "${NGINX_PORT}:${NGINX_PORT}"
+    volumes:
+      - ./config/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./logs:/logs
+    depends_on:
+      - practice10

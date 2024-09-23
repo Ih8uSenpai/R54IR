@@ -1,0 +1,4 @@
+172.18.0.1 - - [22/Sep/2024:23:06:42 +0000] "GET /time HTTP/1.1" 200 20 "-" "PostmanRuntime/7.42.0"
+172.18.0.1 - - [22/Sep/2024:23:09:22 +0000] "GET /greet?name=John HTTP/1.1" 200 11 "-" "PostmanRuntime/7.42.0"
+172.18.0.1 - - [23/Sep/2024:00:07:37 +0000] "GET /greet?name=Dubina123 HTTP/1.1" 200 16 "-" "PostmanRuntime/7.42.0"
+172.18.0.1 - - [23/Sep/2024:00:08:05 +0000] "GET /greet?name=A55_BREAKER3000 HTTP/1.1" 200 22 "-" "PostmanRuntime/7.42.0"
