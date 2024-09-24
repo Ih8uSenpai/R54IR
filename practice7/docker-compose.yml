@@ -1,0 +1,53 @@
+version: '3'
+services:
+  postgresql:
+    image: postgres:12
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: project2
+    volumes:
+      - postgresql-data:/var/lib/postgresql/data
+    networks:
+      - item-network
+  server:
+    build: ./LibraryBoot/
+    ports:
+      - '8080:8080'
+    restart: always
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgresql:5432/project2
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+      SERVER_PORT: 8080
+    depends_on:
+      - postgresql
+      - redis
+    networks:
+      - item-network
+  redis:
+    image: redis
+    ports:
+      - '6379:6379'
+    volumes:
+      - redis-data:/data
+    networks:
+      - item-network
+  spring:
+    build: ./security/
+    ports:
+      - '8081:8081'
+    restart: always
+    environment:
+      SPRING_REDIS_HOST: redis
+      SPRING_REDIS_PORT: 6379
+      SERVER_PORT: 8081
+    depends_on:
+      - redis
+    networks:
+      - item-network
+networks:
+  item-network:
+volumes:
+  postgresql-data:
+  redis-data:

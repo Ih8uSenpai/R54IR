@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Book</title>
+</head>
+<body>
+<p th:text="${book.getTitle()} + ', ' + ${book.getAuthor()} + ', ' + ${book.getYearOfCreation()}"></p>
+<a th:href="@{/books/{id}/edit(id=${book.getId()})}" >Edit book</a>
+<form th:method="DELETE" th:action="@{/books/{id}(id=${book.getId})}">
+    <input type="submit" value="Delete book">
+</form>
+<div th:if="${book.getPerson() == null}">
+    <p>This book is free. Who should I assign it to?</p>
+    <form th:method="PATCH" th:action="@{/books/{id}/set(id=${book.getId()})}">
+        <label for="person">Choose person:</label>
+        <select id="person" th:object="${person}" th:field="*{id}">
+            <option th:each="person : ${people}" th:value="${person.getId()}" th:text="${person.getName()}"></option>
+        </select>
+        <input type="submit" value="Set person"/>
+    </form>
+</div>
+<div th:if="${book.getPerson() != null}">
+    <p th:text="'The book is now at:' + ${concrete_people.name}"></p>
+    <form th:method="PATCH" th:action="@{/books/{id}/unset(id=${book.getId()})}">
+        <input type="submit" value="Release the book">
+    </form>
+</div>
+
+</body>
+<script type="text/javascript" src="../../static/checkUser.js"></script>
+<script type="text/javascript" src="../../static/checkReader.js"></script>
+</html>

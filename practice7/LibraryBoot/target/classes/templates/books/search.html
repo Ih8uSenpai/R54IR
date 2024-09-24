@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+</head>
+<body>
+<form th:method="GET" th:action="@{search?pattern=${param.pattern} + '&' + ${param.visible}}">
+    <label for="pattern">Enter pattern: </label>
+    <input id = "pattern" name="pattern"/>
+    <input name="visible" value="1" hidden="hidden">
+    <input type="submit" value="Search"/>
+</form>
+<div th:if="${#request.getParameter('visible') == '1'}">
+    <div th:if="${books.size() != 0}">
+      <div th:each="book : ${books}" >
+          <p th:text="${book.getTitle()} + ', ' + ${book.getAuthor()} + ', ' + ${book.getYearOfCreation()}"></p>
+          <p th:if="${book.getPerson() != null}" th:text="'The book is now at: ' + ${book.getPerson().name}" ></p>
+          <p th:if="${book.getPerson() == null}" th:text="'This book is free'"></p>
+      </div>
+    </div>
+    <p th:if="${books.size() == 0}" th:text="'Books were not founded'"></p>
+</div>
+</body>
+<script type="text/javascript" src="../../static/checkUser.js"></script>
+</html>

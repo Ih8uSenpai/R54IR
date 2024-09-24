@@ -1,0 +1,10 @@
+com\example\LibraryBoot\controllers\PersonController.class
+com\example\LibraryBoot\repositories\PersonRepository.class
+com\example\LibraryBoot\services\BookService.class
+com\example\LibraryBoot\models\Person.class
+com\example\LibraryBoot\services\PersonService.class
+com\example\LibraryBoot\repositories\BookRepository.class
+com\example\LibraryBoot\util\PersonValidator.class
+com\example\LibraryBoot\controllers\BookController.class
+com\example\LibraryBoot\models\Book.class
+com\example\LibraryBoot\LibraryBootApplication.class
