@@ -1,0 +1,21 @@
+version: '3'
+services:
+  authorization-service:
+    build:
+      context: ./authorization_service
+    ports:
+      - "8081:8080"
+    environment:
+      - SPRING_REDIS_HOST=redis
+      - SPRING_REDIS_PORT=6379
+
+  marketplace-service:
+    build:
+      context: ./marketplace_service
+    ports:
+      - "8080:8080"
+
+  redis:
+    image: "redis:alpine"
+    ports:
+      - "6379:6379"

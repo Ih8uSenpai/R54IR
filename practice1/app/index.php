@@ -10,6 +10,7 @@
     <?php
     // Подключение к базе данных PostgreSQL
     $connection_string = "host=db dbname=appdb user=user password=password";
+    $connection_string = "host=db dbname=appdb user=user password=password";
     $conn = pg_connect($connection_string);
 
     if (!$conn) {
